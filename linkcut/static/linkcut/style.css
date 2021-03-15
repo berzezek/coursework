@@ -1,0 +1,65 @@
+@font-face {
+        font-family: Ustroke Regular;
+        src: "{% static 'linkcut/19849.ttf' %}";
+   }
+
+body {
+    font-family: Ustroke Regular;
+}
+
+.footer {
+    background-color: #2b2a2a;
+    display: flex;
+    justify-content: space-around;
+
+    align-items: center;
+}
+
+.button div {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.button {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10%;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form {
+    margin-top: 10%;
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-top: 10px;
+    padding: 2%
+}
+
+.form__button {
+    padding: 10px;
+    font-family: Ustroke Regular;
+}
+
+.helptext {
+    font-size: 12px;
+    color: #969696;
+}
+
+label {
+    color: #969696;
+
+}

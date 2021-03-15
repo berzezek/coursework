@@ -1,0 +1,12 @@
+{% extends 'linkcut/base.html' %}
+
+{% block title %}
+  Вышли с аккаунта
+{% endblock %}
+
+{% block main %}
+  <form class="form">
+    <h2 class="">Вы успешо вышли с аккаунта</h2>
+    <a href="{% url 'user' %}"><button type="button" name="button" class="form__button">Войти заново</button></a>
+  </form>
+{% endblock %}

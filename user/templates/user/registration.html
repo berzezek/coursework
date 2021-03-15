@@ -1,0 +1,18 @@
+{% extends 'linkcut/base.html' %}
+
+{% block title %}
+  Регистрация нового пользователя
+{% endblock %}
+
+{% block main %}
+  <form method="post" enctype="multipart/form-data" class="form">
+    <div class="">
+      <h2 class="display-3 fw-bold my-5">Страница регистрации</h2>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="form__button" type="submit">Зарегистрироваться</button>
+      <hr class="">
+      <a href="{% url 'user' %}"><button class="form__button" type="submit">Уже зарегистрированы?</button></a>
+    </div>
+  </form>
+{% endblock %}
