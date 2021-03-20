@@ -1,25 +1,21 @@
 {% extends 'linkcut/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}
 Главная
 {% endblock %}
 
 {% block main %}
-  <form method="post" class="form">
-    <div class="">
-      <h2 class="">Страница авторизации</h2>
+<div class="form">
+  <div class="form__div">
+    <h2>Авторизация на сайте</h2>
+    <form method="POST" class="uniForm">
       {% csrf_token %}
-      {{ form.as_p }}
-      <button class="form__button" type="submit">Войти</button>
-    <hr class="">
-    <a href=""><button class="form__button" type="submit">Уже зарегистрированы?</button></a>
-    <a href=""><button class="form__button" type="submit">Забыли пароль?</button></a>
-      <br>
-      Привет
-      {% for item in link %}
-        {{ item.owner }}
-        {{ item.slug }}
-      {% endfor %}
-    </div>
-  </form>
-{% endblock %}
+      {{ form|crispy }}
+      <button type="submit" class="btn btn-outline-warning">Войти</button>
+    </form>
+    <hr>
+    Забыли пароль? <a href="{% url 'pass-reset' %}">Получите новый</a>
+  </div>
+</div>
+{% endblock main %}

@@ -9,7 +9,7 @@ class CutLink(models.Model):
     owner = models.ForeignKey(User, verbose_name='Владелец', on_delete=models.CASCADE)
 
     def get_absolute_url(self):
-        return reverse('home')
+        return reverse('user')
 
     def __str__(self):
         return f'{self.descriptions}'

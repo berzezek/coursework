@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'linkcut.apps.LinkcutConfig',
-
+    'users.apps.UsersConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -115,6 +116,10 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "/static/")
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
+MEDIA_ROOT = os.path.join(BASE_DIR, "pictures")
 MEDIA_URL = '/pictures/'
+
+LOGIN_URL = 'user'
+LOGIN_REDIRECT_URL = 'profile'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

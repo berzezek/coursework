@@ -17,11 +17,11 @@ def about(request):
 
 class CutLinkView(ListView):
     model = CutLink
-    template_name = 'linkcut/home.html'
+    template_name = 'linkcut/user.html'
     context_object_name = 'link'
     # ordering = ['id']
 
     def get_context_data(self, **kwards):
         ctx = super(CutLinkView, self).get_context_data(**kwards)
-        ctx['title_name'] = 'Главная страница'
+        ctx['title_name'] = 'Короткие ссылки'
         return ctx
