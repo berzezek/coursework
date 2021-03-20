@@ -12,7 +12,14 @@
       {{ form.as_p }}
       <button class="form__button" type="submit">Войти</button>
     <hr class="">
-    <a href="{% url 'user' %}"><button class="form__button" type="submit">Уже зарегистрированы?</button></a>
-    <a href="{% url 'pass-reset' %}"><button class="form__button" type="submit">Забыли пароль?</button></a>
+    <a href=""><button class="form__button" type="submit">Уже зарегистрированы?</button></a>
+    <a href=""><button class="form__button" type="submit">Забыли пароль?</button></a>
+      <br>
+      Привет
+      {% for item in link %}
+        {{ item.owner }}
+        {{ item.slug }}
+      {% endfor %}
+    </div>
   </form>
 {% endblock %}

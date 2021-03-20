@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class CutLink(models.Model):
     descriptions = models.CharField(verbose_name='Введите описание', max_length=255, default='Что то длинное...')
     long_link = models.CharField(verbose_name='Введите ссылку', max_length=255)
-    short_link = models.CharField(verbose_name='Коротко о главном', max_length=20)
+    slug = models.SlugField(verbose_name='Коротко о главном', max_length=20)
     owner = models.ForeignKey(User, verbose_name='Владелец', on_delete=models.CASCADE)
 
     def get_absolute_url(self):
