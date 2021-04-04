@@ -3,16 +3,16 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from users import views as userViews
-from linkcut import views as linkutViews
 from django.contrib.auth import views as authViews
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', authViews.LoginView.as_view(template_name='users/user.html'), name='user'),
-    path('about', linkutViews.about, name='about'),
+    path('about', userViews.about, name='about'),
     path('reg/', userViews.register, name='reg'),
     path('profile/', userViews.profile, name='profile'),
+    # path('user', userViews.CutLinkView.as_view(template_name='users/user.html'), name='user'),
     path('user/', authViews.LoginView.as_view(template_name='users/user.html'), name='user'),
     path('pass-reset/',
          authViews.PasswordResetView.as_view(template_name='users/pass_reset.html'),

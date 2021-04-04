@@ -2,8 +2,10 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
+# from linkcut.models import CutLink
 
-class UserOurRegistraion(UserCreationForm):
+
+class UserOurregistration(UserCreationForm):
     email = forms.EmailField(required=True)
 
     def __init__(self, *args, **kwargs):
@@ -14,19 +16,13 @@ class UserOurRegistraion(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1']
 
+
 class UserUpdateForm(forms.ModelForm):
-    email = forms.EmailField()
-
-
-    class Meta:
-        model = User
-        fields = ['username', 'email']
-
-class ProfileImage(forms.ModelForm):
-    def __init__(self, *args, **kwards):
-        super(ProfileImage, self).__init__(*args, **kwards)
-        self.fields['img'].label = "Изображение профиля"
+    username = forms.CharField(required=False)
+    password1 = forms.CharField(required=False)
+    slug = forms.CharField(required=False)
+    long_links = forms.CharField(required=False)
 
     class Meta:
         model = Profile
-        fields = ['img']
+        fields = ['username', 'password1', 'slug', 'long_links']

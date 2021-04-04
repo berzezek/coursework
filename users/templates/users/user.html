@@ -12,5 +12,9 @@
     <hr>
     Забыли пароль? <a href="{% url 'pass-reset' %}">Получите новый</a>
   </div>
+    {% for item in link %}
+    {{ item.slug }}
+  {% endfor %}
+
 </div>
 {% endblock main %}
